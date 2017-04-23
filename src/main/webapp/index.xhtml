@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/templates/generalTemplate.xhtml">
+    <ui:define name="mainContent">
+        <h:outputText value="#{sampleController.hello}"/>
+        <p:dataTable value="#{sampleController.testStrings}" var="_string">
+            <p:column headerText="Name">
+                <h:outputText value="#{_string}"/>
+            </p:column>
+        </p:dataTable>
+
+        <p:outputPanel>
+            <div class="panel panel-primary">
+                <div class="panel-heading"><span>Test</span></div>
+                <div class="panel-body">
+                    <h:outputText value="test"/>
+                    <p:commandButton value="Button for sample error" actionListener="#{sampleController.testButton}"/>
+                </div>
+            </div>
+        </p:outputPanel>
+    </ui:define>
+</ui:composition>
+
+
